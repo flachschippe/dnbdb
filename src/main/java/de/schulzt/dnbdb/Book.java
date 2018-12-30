@@ -22,6 +22,7 @@ public class Book implements Serializable {
 		this.title = title;
 		this.keywords = new ArrayList<Keyword>();
 		this.authors = new ArrayList<Author>();
+		this.ddClass = new ArrayList<DdClass>();
 	}
 
 	public UUID getId() {
@@ -56,6 +57,10 @@ public class Book implements Serializable {
 		this.keywords = keywords;
 	}
 
+	public List<DdClass> getDdClasses() {
+		return ddClass;
+	}
+
 	@Id
 	@JsonIgnore
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -69,5 +74,8 @@ public class Book implements Serializable {
 	
 	@ManyToMany(cascade = {CascadeType.MERGE})
 	private List<Author> authors;	
+	
+	@ManyToMany(cascade = {CascadeType.MERGE})
+	private List<DdClass> ddClass;
 	
 }

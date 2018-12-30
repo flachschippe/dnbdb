@@ -47,7 +47,7 @@ public class Keyword implements Serializable {
 		this.title = title;
 	}
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition="text")
 	private String title;
 	
 }

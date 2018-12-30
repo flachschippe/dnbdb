@@ -9,18 +9,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
-public class Author implements Serializable {
+public class DdClass implements Serializable {
 
 	@Id
 	@JsonIgnore
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private UUID id;
 
-	public Author() {
+	public DdClass() {
 		
 	}
 	
-	public Author(String title) {
+	public DdClass(String title) {
 		super();
 		this.title = title;
 	}
